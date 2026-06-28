@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iran War: How Did We Get Here?</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --ink: #1a1a2e;
+    --paper: #f7f4ef;
+    --accent: #c0392b;
+    --accent-light: #e8d5d3;
+    --gold: #b8962e;
+    --rule: #c8c0b4;
+    --def-bg: #1a1a2e;
+    --def-text: #f0ece4;
+    --def-accent: #e8b84b;
+    --note-bg: #2c4a3e;
+    --note-border: #5a9e78;
+    --note-text: #e8f5ee;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--ink);
+    color: var(--def-text);
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+    border-bottom: 4px solid var(--gold);
+  }
+
+  header .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 900;
+    line-height: 1.2;
+    max-width: 800px;
+    margin: 0 auto 1.2rem;
+  }
+
+  header .byline {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--rule);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── LAYOUT ── */
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+  }
+
+  /* ── BULLET ITEMS ── */
+  .loser-item {
+    margin-bottom: 2rem;
+    padding-left: 1.2rem;
+    border-left: 3px solid var(--accent);
+  }
+
+  .loser-item p {
+    font-weight: 300;
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  .loser-label {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── PERSONAL NOTE ── */
+  .personal-note {
+    background: var(--note-bg);
+    border-left: 4px solid var(--note-border);
+    border-radius: 4px;
+    padding: 1.6rem 1.8rem;
+    margin: 2.5rem 0;
+    color: var(--note-text);
+  }
+
+  .personal-note .note-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--note-border);
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .personal-note p {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--note-text);
+  }
+
+  /* ── SECTION DIVIDER ── */
+  .section-break {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 2rem 0;
+  }
+
+  /* ── VOCAB LINKS ── */
+  .vlink {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .vlink sup {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62em;
+    font-weight: 500;
+    color: var(--accent);
+    margin-left: 1px;
+    vertical-align: super;
+    transition: color 0.15s;
+  }
+
+  .vlink:hover sup {
+    color: #8b1a1a;
+  }
+
+  /* ── DEFINITIONS ── */
+  .definitions {
+    background: var(--def-bg);
+    color: var(--def-text);
+    border-radius: 4px;
+    margin-top: 3.5rem;
+    padding: 2.5rem 2.5rem 3rem;
+    border-top: 4px solid var(--gold);
+  }
+
+  .definitions h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--def-accent);
+    letter-spacing: 0.05em;
+    margin-bottom: 2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .def-entry {
+    margin-bottom: 1.6rem;
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    line-height: 1.7;
+    font-size: 0.97rem;
+    font-weight: 300;
+  }
+
+  .def-entry:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .def-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72em;
+    color: var(--def-accent);
+    font-weight: 500;
+    margin-right: 0.3em;
+    vertical-align: super;
+  }
+
+  .def-word { font-weight: 700; color: #ffffff; }
+  .def-syn  { font-weight: 700; color: #ffffff; }
+
+  .def-phon {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82em;
+    color: var(--def-accent);
+    margin-right: 0.2em;
+  }
+
+  .return-link {
+    display: inline-block;
+    margin-left: 0.5em;
+    font-size: 0.8em;
+    color: var(--def-accent);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.15s;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .return-link:hover { opacity: 1; }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    color: var(--rule);
+    text-transform: uppercase;
+    border-top: 1px solid var(--rule);
+    margin-top: 3rem;
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 2rem 1.2rem 3rem; }
+    .definitions { padding: 1.8rem 1.4rem 2rem; }
+    header { padding: 2rem 1.2rem 1.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="label">Vocabulary Treatment &nbsp;·&nbsp; Geopolitics &amp; Current Affairs</div>
+  <h1>Iran War: How Did We Get Here?</h1>
+  <div class="byline">Author unknown &nbsp;·&nbsp; June 2026</div>
+</header>
+
+<div class="container">
+<article class="article">
+
+  <div class="loser-item">
+    <span class="loser-label">America — and its case for war — is a loser</span>
+    <p>A war started to change the Iranian <a class="vlink" id="word-1" href="#def-1"><strong>regime</strong><sup>1</sup></a> — or help the Iranian people, or <a class="vlink" id="word-2" href="#def-2"><strong>conclusively</strong><sup>2</sup></a> deny Iran a nuclear weapon, or take out all of its missile/drone capabilities — has ended with the U.S. signing a <a class="vlink" id="word-3" href="#def-3"><strong>ceasefire</strong><sup>3</sup></a> <a class="vlink" id="word-4" href="#def-4"><strong>framework</strong><sup>4</sup></a> that achieved none of its original goals.</p>
+  </div>
+
+  <div class="loser-item">
+    <span class="loser-label">MAGA is a loser</span>
+    <p>Trump's war of choice led to higher <a class="vlink" id="word-5" href="#def-5"><strong>inflation</strong><sup>5</sup></a>, the president's worst-ever approval rating, and a lot of pissed off right-wing politicians and commentators, including Tucker Carlson, the top-rated news podcaster, who now says he will be leaving the Republican Party.</p>
+  </div>
+
+  <hr class="section-break">
+
+  <div class="personal-note">
+    <span class="note-label">✦ Personal Note — Terence</span>
+    <p>I'm an aspiring Buddhist, aiming to make skillful, wise choices at every turn. Amazingly, King Donald's actions give me a daily opportunity to embrace acceptance, tolerance, and non-judgment. But surprise, today's booby prize lets me celebrate Tuck-Tuck's resignation from the Republican Party. Thank you, Tara.</p>
+  </div>
+
+  <hr class="section-break">
+
+  <div class="loser-item">
+    <span class="loser-label">White House unity is a loser</span>
+    <p>It's as if this war was started and ended by two entirely different administrations. A war that started with Rubio making the US sound like a classic, George W. Bush-era <a class="vlink" id="word-6" href="#def-6"><strong>neocon</strong><sup>6</sup></a> state ends with the <a class="vlink" id="word-7" href="#def-7"><strong>Jacksonian</strong><sup>7</sup></a> <a class="vlink" id="word-8" href="#def-8"><strong>isolationist</strong><sup>8</sup></a> JD Vance negotiating and explaining the framework with values <a class="vlink" id="word-9" href="#def-9"><strong>opposite</strong><sup>9</sup></a> to those that <a class="vlink" id="word-10" href="#def-10"><strong>justified</strong><sup>10</sup></a> the war, in the first place.</p>
+  </div>
+
+  <div class="loser-item">
+    <span class="loser-label">Iran is a loser</span>
+    <p>The deal framework looks good for Iran, but the national economy is a mess, and the state of military and civilian <a class="vlink" id="word-11" href="#def-11"><strong>infrastructure</strong><sup>11</sup></a> is <a class="vlink" id="word-12" href="#def-12"><strong>pitiful</strong><sup>12</sup></a>.</p>
+  </div>
+
+  <div class="loser-item">
+    <span class="loser-label">Israel is a loser</span>
+    <p>After unsuccessfully <a class="vlink" id="word-13" href="#def-13"><strong>petitioning</strong><sup>13</sup></a> every administration since the 1990s for help bombing Iran, Benjamin Netanyahu finally got his wish from Trump … and his hand-picked war has ended with a <a class="vlink" id="word-14" href="#def-14"><strong>surrender</strong><sup>14</sup></a> memo so <a class="vlink" id="word-15" href="#def-15"><strong>disastrous</strong><sup>15</sup></a> that Israeli media is accusing Trump of abandoning Israel to its ultimate enemy.</p>
+  </div>
+
+  <div class="loser-item">
+    <span class="loser-label">Disarmament is a loser</span>
+    <p>Trump claimed in February that this war was about taking a <a class="vlink" id="word-16" href="#def-16"><strong>super-weapon</strong><sup>16</sup></a> out of Iran's hands (nuclear weapons), but the war <a class="vlink" id="word-17" href="#def-17"><strong>ironically</strong><sup>17</sup></a> gave Iran a new super-weapon, which is its ability to shut down the Strait of Hormuz or make money off it, like a <a class="vlink" id="word-18" href="#def-18"><strong>tolled</strong><sup>18</sup></a> highway.</p>
+  </div>
+
+</article>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!--                    VOCABULARY LIST                     -->
+<!-- ══════════════════════════════════════════════════════ -->
+
+<div class="definitions">
+  <h2>📖 Vocabulary</h2>
+
+  <div class="def-entry" id="def-1">
+    <span class="def-num">1</span><span class="def-word">Regime</span> <span class="def-phon">(ruh-ZHEEM)</span> - a government, especially an authoritarian one, or the system by which a country is governed; <span class="def-syn">government, administration, rule, leadership</span>. Western governments imposed sanctions in an attempt to pressure the regime into abandoning its nuclear program. <a class="return-link" href="#word-1" title="Back to article">↑ back</a>
+  </div>
+
+  <div class="def-entry" id="def-2">
+    <span class="def-num">2</span><span class="def-word">Conclusively</span> <span class="def-phon">(kun-KLOO-siv-lee)</span> - in a way that settles a matter definitively, leaving no room for doubt or further argument; <span class="def-syn">definitively, decisively, finally, irrefutably</span>. The investigation failed to conclusively establish who had authorized the attack. <a class="return-link" href="#word-2" title="Back to article">↑ back</a>
+  </div>
+
+  <div class="def-entry" id="def-3">
+    <span class="def-num">3</span><span class="def-word">Ceasefire</span> <span class="def-phon">(SEES-fyr)</span> - a temporary or permanent agreement between warring parties to stop fighting; <span class="def-syn">truce, armistice, halt, suspension of hostilities</span>. Both sides agreed to a ceasefire, but analysts warned it was fragile and could collapse within weeks. <a class="return-link" href="#word-3" title="Back to article">↑ back</a>
+  </div>
+
+  <div class="def-entry" id="def-4">
+    <span class="def-num">4</span><span class="def-word">Framework</span> <span class="def-phon">(FRAYM-wurk)</span> - a basic structure or set of principles that underlies a system, agreement, or plan, within which more detailed arrangements can be developed; <span class="def-syn">structure, outline, blueprint, foundation</span>. The two countries signed a framework agreement, leaving the finer details to be negotiated over the following months. <a class="return-link" href="#word-4" title="Back to article">↑ back</a>
+  </div>
+
+  <div class="def-entry" id="def-5">
+    <span class="def-num">5</span><span class="def-word">Inflation</span> <span class="def-phon">(in-FLAY-shun)</span> - the rate at which the general level of prices for goods and services rises, reducing purchasing power; <span class="def-syn">price rise, cost increase, monetary expansion</span>. Surging energy prices drove inflation to its highest level in forty years, squeezing household budgets across the country. <a class="return-link" href="#word-5" title="Back to article">↑ back</a>
+  </div>
+
+  <div class="def-entry" id="def-6">
+    <span class="def-num">6</span><span class="def-word">Neocon</span> <span class="def-phon">(NEE-oh-kon)</span> - short for neoconservative; a political position advocating for the aggressive promotion of democracy and U.S. interests abroad, often through military intervention; <span class="def-syn">neoconservative, interventionist, hawkish</span>. The foreign policy speech drew immediate criticism from those who saw it as a return to the neocon playbook of the early 2000s. <a class="return-link" href="#word-6" title="Back to article">↑ back</a>
+  </div>
+
+  <div class="def-entry" id="def-7">
+    <span class="def-num">7</span><span class="def-word">Jacksonian</span> <span class="def-phon">(jak-SOH-nee-un)</span> - relating to the foreign policy tradition associated with Andrew Jackson, emphasizing national sovereignty, military strength used only to protect direct U.S. interests, and deep skepticism of international entanglements; <span class="def-syn">nationalist, sovereigntist, America-first</span>. His Jacksonian instincts made him deeply reluctant to commit troops to a conflict that posed no direct threat to American soil. <a class="return-link" href="#word-7" title="Back to article">↑ back</a>
+  </div>
+
+  <div class="def-entry" id="def-8">
+    <span class="def-num">8</span><span class="def-word">Isolationist</span> <span class="def-phon">(eye-suh-LAY-shun-ist)</span> - a person or policy that favors withdrawing from international affairs and avoiding foreign alliances or conflicts; <span class="def-syn">non-interventionist, inward-looking, nationalist, withdrawalist</span>. The isolationist wing of the party argued that the country had no business spending billions on wars ten thousand miles from home. <a class="return-link" href="#word-8" title="Back to article">↑ back</a>
+  </div>
+
+  <div class="def-entry" id="def-9">
+    <span class="def-num">9</span><span class="def-word">Opposite</span> <span class="def-phon">(OP-uh-zit)</span> - here used to mean directly contradictory or incompatible; <span class="def-syn">contradictory, conflicting, contrary, antithetical</span>. The two men held opposite views on almost every major foreign policy question, yet were somehow serving in the same cabinet. <a class="return-link" href="#word-9" title="Back to article">↑ back</a>
+  </div>
+
+  <div class="def-entry" id="def-10">
+    <span class="def-num">10</span><span class="def-word">Justified</span> <span class="def-phon">(JUS-tih-fyd)</span> - shown or claimed to be right, reasonable, or necessary; <span class="def-syn">warranted, legitimized, rationalized, defended</span>. The administration justified the military action on the grounds of an imminent threat, a claim that later proved difficult to substantiate. <a class="return-link" href="#word-10" title="Back to article">↑ back</a>
+  </div>
+
+  <div class="def-entry" id="def-11">
+    <span class="def-num">11</span><span class="def-word">Infrastructure</span> <span class="def-phon">(IN-fruh-struk-chur)</span> - the fundamental physical and organizational systems of a country or organization, including roads, power grids, water supply, and communications networks; <span class="def-syn">systems, facilities, foundations, framework</span>. Years of sanctions and conflict had left the country's infrastructure in a state of severe disrepair. <a class="return-link" href="#word-11" title="Back to article">↑ back</a>
+  </div>
+
+  <div class="def-entry" id="def-12">
+    <span class="def-num">12</span><span class="def-word">Pitiful</span> <span class="def-phon">(PIT-ih-ful)</span> - deserving or arousing pity because of being inadequate, wretched, or in a very poor state; <span class="def-syn">wretched, deplorable, woeful, inadequate</span>. The pitiful state of the country's hospitals shocked even the most experienced aid workers. <a class="return-link" href="#word-12" title="Back to article">↑ back</a>
+  </div>
+
+  <div class="def-entry" id="def-13">
+    <span class="def-num">13</span><span class="def-word">Petitioning</span> <span class="def-phon">(puh-TISH-un-ing)</span> - formally requesting something from an authority or powerful party, especially repeatedly or over a long period; <span class="def-syn">appealing, lobbying, requesting, imploring</span>. The smaller nations had spent years petitioning the Security Council for intervention, with little result. <a class="return-link" href="#word-13" title="Back to article">↑ back</a>
+  </div>
+
+  <div class="def-entry" id="def-14">
+    <span class="def-num">14</span><span class="def-word">Surrender</span> <span class="def-phon">(suh-REN-dur)</span> - the act of giving up or yielding to an opponent, or in a broader sense, capitulating on one's stated goals or principles; <span class="def-syn">capitulation, concession, submission, climbdown</span>. Critics described the agreement not as a negotiated peace but as a thinly disguised surrender. <a class="return-link" href="#word-14" title="Back to article">↑ back</a>
+  </div>
+
+  <div class="def-entry" id="def-15">
+    <span class="def-num">15</span><span class="def-word">Disastrous</span> <span class="def-phon">(dih-ZAS-trus)</span> - causing great harm, damage, or failure; extremely bad in its outcome; <span class="def-syn">catastrophic, calamitous, devastating, ruinous</span>. The disastrous miscalculation cost the general his career and the country its most strategic ally in the region. <a class="return-link" href="#word-15" title="Back to article">↑ back</a>
+  </div>
+
+  <div class="def-entry" id="def-16">
+    <span class="def-num">16</span><span class="def-word">Super-weapon</span> <span class="def-phon">(SOO-pur-wep-un)</span> - a weapon or capability so powerful or strategically significant that it fundamentally shifts the balance of power; <span class="def-syn">ultimate weapon, decisive capability, game-changer, strategic asset</span>. Control of the strait gave the country a super-weapon it had never possessed before — the ability to strangle global oil supplies at will. <a class="return-link" href="#word-16" title="Back to article">↑ back</a>
+  </div>
+
+  <div class="def-entry" id="def-17">
+    <span class="def-num">17</span><span class="def-word">Ironically</span> <span class="def-phon">(eye-RON-ik-lee)</span> - in a way that is contrary to what was expected or intended, often with a sense of bitter or amusing contradiction; <span class="def-syn">paradoxically, perversely, contrary to expectations</span>. Ironically, the sanctions designed to weaken the government only strengthened its grip on the population by creating a common enemy. <a class="return-link" href="#word-17" title="Back to article">↑ back</a>
+  </div>
+
+  <div class="def-entry" id="def-18">
+    <span class="def-num">18</span><span class="def-word">Tolled</span> <span class="def-phon">(TOHLD)</span> - subject to a fee charged for the use of a road, bridge, or waterway; here used figuratively to describe Iran's ability to extract payment or concessions from ships using the strait; <span class="def-syn">fee-based, charged, levied</span>. The newly tolled crossing generated hundreds of millions in revenue annually, transforming what had once been a public right-of-way into a profit center. <a class="return-link" href="#word-18" title="Back to article">↑ back</a>
+  </div>
+
+</div>
+</div>
+
+<footer>
+  Vocab Treatment &nbsp;·&nbsp; Iran War: How Did We Get Here? &nbsp;·&nbsp; Author Unknown &nbsp;·&nbsp; June 2026
+</footer>
+
+</body>
+</html>

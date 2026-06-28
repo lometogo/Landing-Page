@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fresh side for tamales? — Vocab Treatment</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #1a2340;
+    --navy-light: #243058;
+    --cream: #f7f3eb;
+    --cream-dark: #ede8dc;
+    --gold: #c9a84c;
+    --gold-light: #e2c97e;
+    --charcoal: #2c2c2c;
+    --muted: #6b6b6b;
+    --amber: #7a4f1e;
+    --amber-bg: #fdf3e3;
+    --amber-border: #c9a84c;
+  }
+
+  body {
+    background-color: var(--cream-dark);
+    font-family: 'Source Serif 4', Georgia, serif;
+    color: var(--charcoal);
+    line-height: 1.85;
+    font-size: 1.05rem;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background-color: var(--navy);
+    padding: 2.8rem 2rem 2.2rem;
+    text-align: center;
+    border-bottom: 3px solid var(--gold);
+  }
+
+  header h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.1rem;
+    font-weight: 600;
+    color: var(--cream);
+    letter-spacing: 0.01em;
+    line-height: 1.3;
+    margin-bottom: 0.55rem;
+  }
+
+  header h1 a {
+    color: var(--cream);
+    text-decoration: none;
+    border-bottom: 2px solid rgba(226,201,126,0.35);
+    transition: border-color 0.2s;
+  }
+
+  header h1 a:hover {
+    border-color: var(--gold-light);
+  }
+
+  header .byline {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    color: var(--gold-light);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+  }
+
+  header .source-line {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.8rem;
+    color: #8fa0c4;
+    margin-top: 0.3rem;
+  }
+
+  header .source-line a {
+    color: var(--gold-light);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(226,201,126,0.4);
+    transition: border-color 0.2s;
+  }
+
+  header .source-line a:hover {
+    border-color: var(--gold-light);
+  }
+
+  /* ── ARTICLE BODY ── */
+  .article-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2.8rem 2rem 1rem;
+    background-color: var(--cream);
+  }
+
+  .article-body p {
+    margin-bottom: 1.4rem;
+    font-size: 1.05rem;
+  }
+
+  .article-body a {
+    color: #5a7a3a;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(90,122,58,0.35);
+    transition: border-color 0.2s;
+  }
+
+  .article-body a:hover {
+    border-color: #5a7a3a;
+  }
+
+  .article-body strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+
+  sup a {
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 0.75em;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+  }
+
+  sup a:hover {
+    color: var(--gold-light);
+  }
+
+  /* ── FEATURED POST (opening question) ── */
+  .featured-post {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    border-left: 3px solid var(--gold);
+    padding-left: 1.2rem;
+    margin-bottom: 1.4rem;
+    color: #1e1e1e;
+  }
+
+  /* ── COMMENT ATTRIBUTION ── */
+  .comment-attr {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.82rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-align: right;
+    margin-top: -0.6rem;
+    margin-bottom: 1.6rem;
+    border-top: 1px solid var(--cream-dark);
+    padding-top: 0.4rem;
+  }
+
+  /* ── DIVIDER ── */
+  .comment-divider {
+    border: none;
+    border-top: 1px solid var(--cream-dark);
+    margin: 0.4rem 0 1.4rem;
+  }
+
+  /* ── AUTHOR'S NOTE ── */
+  .author-note {
+    background-color: var(--amber-bg);
+    border-left: 4px solid var(--amber-border);
+    margin: 0 0 1.6rem 1.5rem;
+    padding: 0.85rem 1.1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .author-note .note-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.72rem;
+    font-variant: small-caps;
+    letter-spacing: 0.1em;
+    color: var(--amber);
+    margin-bottom: 0.35rem;
+  }
+
+  .author-note p {
+    font-size: 0.95rem !important;
+    margin-bottom: 0 !important;
+    color: var(--charcoal);
+    font-weight: 600;
+  }
+
+  /* ── DEFINITION PANEL ── */
+  .def-panel {
+    background-color: var(--navy);
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2.4rem 2rem 3rem;
+    border-top: 3px solid var(--gold);
+  }
+
+  .def-panel h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--gold);
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.8rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid rgba(201,168,76,0.3);
+  }
+
+  .def-entry {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.4rem;
+    align-items: baseline;
+  }
+
+  .def-num {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    color: var(--gold);
+    font-weight: 600;
+    min-width: 1.4rem;
+    padding-top: 0.05rem;
+  }
+
+  .def-text {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 0.95rem;
+    color: #d4cfc5;
+    line-height: 1.75;
+  }
+
+  .def-text strong {
+    color: var(--gold-light);
+    font-weight: 600;
+  }
+
+  .def-back {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.75rem;
+    color: rgba(201,168,76,0.6);
+    text-decoration: none;
+    margin-left: 0.5rem;
+    transition: color 0.2s;
+  }
+
+  .def-back:hover {
+    color: var(--gold);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background-color: var(--navy-light);
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    text-align: center;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.75rem;
+    color: #5a6a8a;
+    border-top: 1px solid rgba(201,168,76,0.2);
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     HEADER
+══════════════════════════════════════════ -->
+<header>
+  <h1><a href="https://ask.metafilter.com/390021/Fresh-side-for-tamales" target="_blank">Fresh side for tamales?</a></h1>
+  <div class="byline">Posted by Mini Caesar Salad Virtual Workshop</div>
+  <div class="source-line">Source: <a href="https://ask.metafilter.com/390021/Fresh-side-for-tamales" target="_blank">AskMetafilter</a></div>
+</header>
+
+<!-- ══════════════════════════════════════════
+     ARTICLE BODY
+══════════════════════════════════════════ -->
+<div class="article-wrap">
+<div class="article-body">
+
+  <p class="featured-post">I'm struggling with what to serve as a veggie side for tamales — a simple green salad just doesn't click for me, in that context. What relatively bright, fresh sides do you serve with tamales?</p>
+  <hr class="comment-divider">
+
+  <p>diced cucumber, papaya, red onion, salt, pepper, cumin, cayenne, cilantro, lime juice.</p>
+  <div class="comment-attr">— j_curiouser</div>
+  <hr class="comment-divider">
+
+  <p>sliced radishes with salt and lime &nbsp;<strong id="anchor-1">zanahorias</strong><sup><a href="#def-1">¹</a></sup> en <strong id="anchor-2">escabeche</strong><sup><a href="#def-2">²</a></sup> &nbsp;<strong id="anchor-3">elote</strong><sup><a href="#def-3">³</a></sup> (or half ass it with canned corn lime juice <strong id="anchor-4">tajín</strong><sup><a href="#def-4">⁴</a></sup> <strong id="anchor-5">cotija</strong><sup><a href="#def-5">⁵</a></sup> and a sploot of mayo) <strong id="anchor-6">cebollitas</strong><sup><a href="#def-6">⁶</a></sup></p>
+  <div class="comment-attr">— phunniemee</div>
+
+  <div class="author-note">
+    <div class="note-label">Author's Note — Terence</div>
+    <p>Many ingredients here are in Spanish, but follow links for English translation.</p>
+  </div>
+
+  <hr class="comment-divider">
+
+  <p><strong id="anchor-7"><a href="https://www.sandravalvassori.com/quick-curtido-salvadoran-cabbage-slaw/" target="_blank">Curtido</a></strong><sup><a href="#def-7">⁷</a></sup> (a spicy tangy slaw situation)</p>
+  <div class="comment-attr">— redfoxtail</div>
+  <hr class="comment-divider">
+
+  <p><strong id="anchor-8">Calabacitas</strong><sup><a href="#def-8">⁸</a></sup>! It features zucchini, squash and corn.</p>
+  <div class="comment-attr">— NotLost</div>
+  <hr class="comment-divider">
+
+  <p><strong id="anchor-9">Jicama</strong><sup><a href="#def-9">⁹</a></sup> salad, with lime juice and chili powder or tajín, cilantro if desired, salt and sugar to taste. If I want more sweet, orange <strong id="anchor-10">supremes</strong><sup><a href="#def-10">¹⁰</a></sup> in there (or whatever citrus you like), if I want more savory, sliced red cabbage (or whatever cabbage you've got).</p>
+  <p><strong id="anchor-11">Julienne</strong><sup><a href="#def-11">¹¹</a></sup> the jicama and mix everything ahead of time, tastes better after it sits for a while, lasts a couple days. The spicy carrot situation is also the correct answer imo, and any kind of fresh radish preparation you like — I once had radish quarters dipped in leftover elote sauce and it was awesome.</p>
+  <div class="comment-attr">— Mizu</div>
+  <hr class="comment-divider">
+
+  <p>I love finely diced avocado, jicama, corn, onions/shallots, cilantro, and chili lime oil. The crunch from the jicama and corn is really nice paired with the creamy smoothness of the avocado and tamale filling. Definitely let the mixture rest in the fridge so the chili lime oil marinates. Mmmmmm.</p>
+  <div class="comment-attr">— The Adventure Begins</div>
+
+  <div class="author-note">
+    <div class="note-label">Author's Note — Terence</div>
+    <p>Avocado is never out of place in any Mexican dish!</p>
+  </div>
+
+  <hr class="comment-divider">
+
+  <p>I will also do a slaw with thin green cabbage radishes, orange wedges, some cilantro and w lime dressing. If I have a bit more time homemade escabeche (pickled carrots, cauliflower, onions and jalapenos) is a winner.</p>
+  <div class="comment-attr">— brookeb</div>
+  <hr class="comment-divider">
+
+  <p>We also usually have them with a cabbage slaw, usually with a lime, mayonnaise and sour cream dressing and whatever complementary veg we have in the fridge at the time, but usually jalapeno, cilantro, and radishes, then top it with some tajín.</p>
+  <div class="comment-attr">— urbanlenny</div>
+
+</div><!-- /article-body -->
+</div><!-- /article-wrap -->
+
+<!-- ══════════════════════════════════════════
+     DEFINITION PANEL
+══════════════════════════════════════════ -->
+<div class="def-panel">
+  <h2>Vocabulary</h2>
+
+  <div class="def-entry" id="def-1">
+    <div class="def-num">1</div>
+    <div class="def-text">
+      <strong>Zanahorias</strong>: (sah-nah-OH-ree-ahs) — the Spanish word for carrots, commonly seen on menus and in recipes for Mexican pickled vegetable dishes; <strong>carrots</strong>. The zanahorias en escabeche had absorbed so much vinegar and spice they were almost unrecognizable as plain carrots.
+      <a class="def-back" href="#anchor-1">↑ back</a>
+    </div>
+  </div>
+
+  <div class="def-entry" id="def-2">
+    <div class="def-num">2</div>
+    <div class="def-text">
+      <strong>Escabeche</strong>: (es-kah-BEH-cheh) — a preparation of vegetables (or fish) pickled in vinegar, oil, and spices, common across Latin American and Spanish cuisines; <strong>pickle, brine, vinegar cure</strong>. The jalapeños in the escabeche gave the whole jar a pleasant, slow heat.
+      <a class="def-back" href="#anchor-2">↑ back</a>
+    </div>
+  </div>
+
+  <div class="def-entry" id="def-3">
+    <div class="def-num">3</div>
+    <div class="def-text">
+      <strong>Elote</strong>: (eh-LOH-teh) — the Spanish word for corn on the cob, and also the name of a popular Mexican street food preparation of grilled corn topped with mayo, cotija cheese, chili powder, and lime; <strong>corn, Mexican street corn</strong>. The elote cart on the corner always had a line stretching halfway down the block.
+      <a class="def-back" href="#anchor-3">↑ back</a>
+    </div>
+  </div>
+
+  <div class="def-entry" id="def-4">
+    <div class="def-num">4</div>
+    <div class="def-text">
+      <strong>Tajín</strong>: (tah-HEEN) — a popular Mexican seasoning blend of chili peppers, lime, and salt, widely used as a topping for fruit, vegetables, and snacks; <strong>chili-lime seasoning, spice blend</strong>. A light dusting of tajín turned the plain mango slices into something you couldn't stop eating.
+      <a class="def-back" href="#anchor-4">↑ back</a>
+    </div>
+  </div>
+
+  <div class="def-entry" id="def-5">
+    <div class="def-num">5</div>
+    <div class="def-text">
+      <strong>Cotija</strong>: (koh-TEE-hah) — a firm, salty, crumbly Mexican cheese used as a topping or garnish, similar in function to Parmesan; <strong>crumbling cheese, Mexican cheese</strong>. She finished the dish with a generous handful of cotija and a squeeze of lime.
+      <a class="def-back" href="#anchor-5">↑ back</a>
+    </div>
+  </div>
+
+  <div class="def-entry" id="def-6">
+    <div class="def-num">6</div>
+    <div class="def-text">
+      <strong>Cebollitas</strong>: (seh-boh-YEE-tahs) — small green onions or scallions in Spanish, often grilled whole as a side dish in Mexican cuisine; <strong>scallions, green onions, spring onions</strong>. The cebollitas came off the grill slightly charred and sweet, perfect for eating alongside the tacos.
+      <a class="def-back" href="#anchor-6">↑ back</a>
+    </div>
+  </div>
+
+  <div class="def-entry" id="def-7">
+    <div class="def-num">7</div>
+    <div class="def-text">
+      <strong>Curtido</strong>: (koor-TEE-doh) — a lightly fermented Salvadoran cabbage slaw seasoned with oregano, vinegar, and chili; <strong>slaw, relish, pickled salad</strong>. The curtido served alongside the pupusas was so tangy and crunchy it became the star of the meal.
+      <a class="def-back" href="#anchor-7">↑ back</a>
+    </div>
+  </div>
+
+  <div class="def-entry" id="def-8">
+    <div class="def-num">8</div>
+    <div class="def-text">
+      <strong>Calabacitas</strong>: (kah-lah-bah-SEE-tahs) — a traditional Mexican sautéed vegetable dish made with zucchini, squash, corn, and peppers; <strong>squash medley, vegetable sauté</strong>. She made a big pan of calabacitas to go alongside the grilled chicken.
+      <a class="def-back" href="#anchor-8">↑ back</a>
+    </div>
+  </div>
+
+  <div class="def-entry" id="def-9">
+    <div class="def-num">9</div>
+    <div class="def-text">
+      <strong>Jicama</strong>: (HEE-kah-mah) — a crunchy, mildly sweet root vegetable native to Mexico, often eaten raw in salads or as a snack with chili and lime; <strong>Mexican turnip, yam bean</strong>. The jicama added a satisfying crunch to the salad without overpowering the other flavors.
+      <a class="def-back" href="#anchor-9">↑ back</a>
+    </div>
+  </div>
+
+  <div class="def-entry" id="def-10">
+    <div class="def-num">10</div>
+    <div class="def-text">
+      <strong>Supremes</strong>: (soo-PREEMZ) — a culinary technique in which citrus fruit segments are cut away from all membrane and pith, leaving only the pure flesh; <strong>segments, sections, fillets</strong>. She carefully cut the grapefruit into supremes so there was nothing bitter left in the salad.
+      <a class="def-back" href="#anchor-10">↑ back</a>
+    </div>
+  </div>
+
+  <div class="def-entry" id="def-11">
+    <div class="def-num">11</div>
+    <div class="def-text">
+      <strong>Julienne</strong>: (zhoo-lee-EN) — a knife technique in which food is cut into long, thin matchstick-shaped strips; <strong>shred, matchstick-cut, fine-strip</strong>. He julienned the carrots so finely they looked almost like noodles.
+      <a class="def-back" href="#anchor-11">↑ back</a>
+    </div>
+  </div>
+
+</div><!-- /def-panel -->
+
+<footer>
+  Vocabulary treatment prepared for educational use.
+</footer>
+
+</body>
+</html>
